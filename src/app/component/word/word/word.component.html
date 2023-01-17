@@ -1,0 +1,17 @@
+<div class="site-content-container">
+    <div *ngIf="word" class="container">
+        {{word.ilocano}}
+        {{word.english}}
+    </div>
+    word examples  <a [href]="exampleURLS" target="_blank">here</a>
+    {{exampleURLS}}
+
+    <p>add times reviewed</p>
+    <p>add times gotten correct</p>
+    <p>times gotten wrong</p>
+</div>
+
+<div *ngIf="!word">
+    Word not found in dictionary!
+    <!-- redirect in a while back to the word list page -->
+</div>

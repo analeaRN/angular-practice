@@ -1,0 +1,9 @@
+<form *ngIf="words">
+    <div *ngFor="let w of words">
+        <p>{{w.english}}</p>
+        <app-word-input translation={{w.ilocano}}></app-word-input>
+        
+    </div>
+    <app-board [board]="userWords" [setWords]="words" [toTranslate]="userWords"></app-board>
+    <!-- <app-multiple-choice [translation]="words" ></app-multiple-choice> -->
+</form>

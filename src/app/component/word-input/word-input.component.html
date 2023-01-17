@@ -1,0 +1,12 @@
+<div>
+    <p>input</p>
+    <button type="submit" (click)="onSubmit()">Submit</button>
+    <label for="translationControl">
+        translation
+    </label>
+    <input type="text" [formControl]="translationControl" id="translationControl" autocomplete="off">
+    {{translationControl.value}}
+    here = {{translation}}
+    <button (click)="fillOutWith(translation)">I need help</button>
+    <button (click)="fillOut()">cheat</button>
+</div>
