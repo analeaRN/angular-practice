@@ -12,27 +12,27 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$ilocano_100_common_words-primary: mat.define-palette(mat.$indigo-palette);
-$ilocano_100_common_words-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$ilocano_flashcards-primary: mat.define-palette(mat.$indigo-palette);
+$ilocano_flashcards-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$ilocano_100_common_words-warn: mat.define-palette(mat.$red-palette);
+$ilocano_flashcards-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-// $ilocano_100_common_words-theme: mat.define-dark-theme((
-  $ilocano_100_common_words-theme: mat.define-light-theme((
+// $ilocano_flashcards-theme: mat.define-dark-theme((
+  $ilocano_flashcards-theme: mat.define-light-theme((
   color: (
-    primary: $ilocano_100_common_words-primary,
-    accent: $ilocano_100_common_words-accent,
-    warn: $ilocano_100_common_words-warn,
+    primary: $ilocano_flashcards-primary,
+    accent: $ilocano_flashcards-accent,
+    warn: $ilocano_flashcards-warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($ilocano_100_common_words-theme);
+@include mat.all-component-themes($ilocano_flashcards-theme);
 
 /* You can add global styles to this file, and also import other style files */
 

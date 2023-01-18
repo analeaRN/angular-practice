@@ -19,6 +19,13 @@ import { WordListComponent } from './component/word/word-list/word-list.componen
 import { WordListElComponent } from './component/word/word-list-el/word-list-el.component';
 import { WordComponent } from './component/word/word/word.component';
 
+// set up back end
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import { HttpClientModule } from '@angular/common/http';
+
+// TODO i NEED to clean this up
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +46,14 @@ import { WordComponent } from './component/word/word/word.component';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    HttpClientModule,
+
+    // sets up mock api
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

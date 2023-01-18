@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ilocano_100_common_words';
+  title = 'ilocano_flashcards';
 }
