@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./word.component.scss'],
 })
 export class WordComponent implements OnInit {
-  word!: Word;
+  word: Word | undefined;
   exampleURLS!: string;
 
   constructor(
@@ -28,8 +28,6 @@ export class WordComponent implements OnInit {
     const wordID = Number(this.route.snapshot.paramMap.get('id'));
     this.wordService.getWord(wordID).subscribe((w) => {
       this.word = w
-
-      // do init that relies on word data coming in
       this.exampleURLS = `https://glosbe.com/ilo/en/${this.word?.ilocano}#examples`
     });
   }
