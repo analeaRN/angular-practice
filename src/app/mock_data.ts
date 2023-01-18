@@ -1,4 +1,4 @@
-import { Word, Level } from './interfaces';
+import { Word } from './interfaces';
 
 export const WORDS: Word[] = [
   {

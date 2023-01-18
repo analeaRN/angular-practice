@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/ilocano_100_common_words'),
+      dir: require('path').join(__dirname, './coverage/ilocano_flashcards'),
       subdir: '.',
       reporters: [
         { type: 'html' },

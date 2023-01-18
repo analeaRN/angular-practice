@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ilocano_100_common_words'`, () => {
+  it(`should have as title 'ilocano_flashcards'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ilocano_100_common_words');
+    expect(app.title).toEqual('ilocano_flashcards');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ilocano_100_common_words app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('ilocano_flashcards app is running!');
   });
 });
