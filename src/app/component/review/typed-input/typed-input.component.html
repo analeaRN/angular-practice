@@ -8,23 +8,26 @@
                     <mat-label>{{word.word.ilocano}}</mat-label>
                     <!-- <input matInput [formControlName]="word.english.toString()" maxlength="50" autocomplete="off"> -->
                     <input matInput [formControlName]="word.word.id.toString()" maxlength="50" autocomplete="off">
+                    
                 </mat-form-field>
+                <mat-icon *ngIf="word.result===undefined">indeterminate_check_box</mat-icon>
+                <mat-icon *ngIf="word.result===true">check_circle_outline</mat-icon>
+                <mat-icon *ngIf="word.result===false">cancel</mat-icon>
                 <!-- <button *ngIf="word.result===false" mat-button type="button" (click)="retryWord(word.word.id)">try again</button> -->
                 <button [disabled]="word.result===true || word.result===undefined || finalSubmit" mat-button
                     type="button" (click)="retryWord(word.word.id)">try again</button>
-                <button [disabled]="word.result==false || submitted || finalSubmit" mat-button type="button"
+                <button [disabled]="word.result===false || submitted || finalSubmit" mat-button type="button"
                     (click)="fillWord(word.word.id)">I need help</button>
             </div>
         </div>
 
         <section id="form-review-actions">
-            <button mat-stroked-button type="submit" color="accent" [disabled]="submitted || finalSubmit" class="form-btn-review">Check Answers</button>
-            <button mat-raised-button type="button" color="accent" [disabled]="finalSubmit" (click)="endSession(reviewForm)" class="form-btn-review">Submit and Finish
+            <button mat-stroked-button type="submit" color="accent" [disabled]="submitted || finalSubmit"
+                class="form-btn-review">Check Answers</button>
+            <button mat-raised-button type="button" color="accent" [disabled]="finalSubmit"
+                (click)="endSession(reviewForm)" class="form-btn-review">Submit and Finish
                 Session
             </button>
         </section>
-
-        <!-- <button mat-button type="button" [disabled]="submitted">Send</button> -->
-        <!-- </fieldset> -->
     </form>
 </div>

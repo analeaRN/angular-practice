@@ -4,6 +4,10 @@
   width: calc(100% - 40px);
 }
 
+.logo {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 1200px) {
   .container {
     max-width: 1170px;
@@ -26,6 +30,7 @@
   background-color: white;
   margin: 0px 150px;
   min-height: calc(100vh - 70px);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .fill-space {

@@ -1,29 +1,22 @@
-<div class="site-content-container">
-    <div *ngIf="word" class="container">
-        {{word.ilocano}}
-        {{word.english}}
+<div *ngIf="word" class="container">
+    <div class="">
+        <h1>{{word.ilocano.toString() | titlecase}}</h1>
+        <h3>{{word.english.toString() | titlecase}}</h3>
     </div>
-    word examples <a [href]="exampleURLS" target="_blank">here</a>
-    {{exampleURLS}}
+    <hr />
+
+        <p >Find example sentences <a [href]="exampleURLS" target="_blank">here</a>!<mat-icon>open_in_new</mat-icon></p>
+    
 
     <!-- Make into flex/ this could be put into another comp... -->
+    <h4>Session stats for this word: </h4>
     <div id="ind-word-stat">
-        <app-stat-card 
-            title="✔️ Correct:" 
-            [stat]="sessionStatsService.getWordStat(word!.id).correct">
+        <app-stat-card title="✔️ Correct:" [stat]="sessionStatsService.getWordStat(word!.id).correct">
         </app-stat-card>
 
-        <app-stat-card 
-            title="❌ Incorrect:" 
-            [stat]="sessionStatsService.getWordStat(word!.id).incorrect">
-        </app-stat-card>
-
-        <app-stat-card 
-            title="💭 Ratio:" 
-            [stat]="sessionStatsService.getWordCIRatio(word!.id)">
+        <app-stat-card title="❌ Incorrect:" [stat]="sessionStatsService.getWordStat(word!.id).incorrect">
         </app-stat-card>
     </div>
-
 </div>
 
 <div *ngIf="!word">

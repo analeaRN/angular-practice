@@ -1,32 +1,8 @@
 <div>
-    <!-- TODO -->
-    <!-- disable the form on submit -->
-    <!-- on submit I need to show he cards, or show a private route -->
-
-    <!-- <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
-        <fieldset>
-            <mat-form-field hintLabel="only {{max}} available">
-                <mat-label>Number of cards to review:</mat-label>
-                <input matInput formControlName="numReview" type="number" min="1" [max]="max">
-                <mat-error
-                    *ngIf="myForm.get('numReview')?.invalid && (myForm.get('numReview')?.dirty || myForm.get('numReview')?.touched)">
-                    Please enter a number between 1 and {{max}}
-                </mat-error>
-            </mat-form-field>
-
-            <mat-form-field>
-                <mat-label>Method of review:</mat-label>
-                <mat-select formControlName="reviewType">
-                    <mat-option value="dragDrop">Drag and Drop</mat-option>
-                    <mat-option value="typeTranslate">Type Translation</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <button mat-button type="submit">Send</button>
-        </fieldset>
-    </form> -->
-
+    <!-- form to ask config of review -->
     <app-review-form [max]="words.length" (myFormSubmitted)="handleSubmit($event)"></app-review-form>
 
+    <!-- method of review here -->
     <div *ngIf="reviewDetails">
         <app-typed-input *ngIf="reviewDetails.controls['reviewType'].value === 'typeTranslate'"
             [reviewAmount]="reviewDetails.controls['numReview'].value" [session]="currentSession!"
@@ -35,11 +11,10 @@
             [reviewAmount]="reviewDetails.controls['numReview'].value"
             (sessionResults)="handleSessionEnd($event)"></app-drag-n-drop>
     </div>
+
+    <!-- results of review  -->
     <app-results *ngIf="submitted" [rightWrongRatio]="endResults!.rightWrongRatio"
         [totalCorrect]="endResults!.totalCorrect" [totalReviewed]="endResults!.totalReviewed"
         [allWordsReviewed]="endResults!.endResults">
     </app-results>
-    <!-- <div *ngIf="submitted">
-        <app-board [setWords]="setReviewWords" [toTranslate]="setReviewWords"></app-board>
-    </div> -->
 </div>

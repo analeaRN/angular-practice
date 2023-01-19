@@ -31,9 +31,7 @@ export class TypedInputComponent implements OnInit {
     let formControls = {};
 
     this.wordsToReview.map((word) => {
-      // const name: string = word!.english.toString();
       const name: string = word.word.id.toString();
-      console.log(name);
       formControls = {
         ...formControls,
         ...{
@@ -41,14 +39,11 @@ export class TypedInputComponent implements OnInit {
         },
       };
     });
-    // console.log('..', formControls);
-    // console.log();
     return formControls;
   }
 
   setUpWords() {
     this.wordService.getXWords(this.reviewAmount).subscribe((w) => {
-      // this.wordsToReview = w;
       this.wordsToReview = w.map((word) => {
         return {
           incorrectCount: 0,
@@ -57,20 +52,17 @@ export class TypedInputComponent implements OnInit {
         };
       });
     });
-    // console.log(this.wordsToReview);
   }
 
   checkWord(wordID: number, userAnswer: string) {
-    console.log(wordID);
-    console.log(userAnswer);
-
+    const toCheck = userAnswer.trim().toLowerCase();
     const wordObj = this.wordsToReview.find((word) => word.word.id == wordID);
-    // if (typeof(wordObj?.word.english)  === string) {
+
     if (typeof wordObj?.word.english === 'string') {
-      wordObj!.result = Boolean(userAnswer === wordObj?.word.english);
+      wordObj!.result = Boolean(toCheck.toLowerCase() === wordObj?.word.english.toLowerCase());
     } else {
       wordObj!.result = Boolean(
-        wordObj?.word.english.some((w) => w == userAnswer)
+        wordObj?.word.english.some((w) =>  toCheck.toLowerCase() === w.toLowerCase())
       );
     }
 
@@ -81,10 +73,6 @@ export class TypedInputComponent implements OnInit {
 
   onSubmit(form: FormGroup) {
     this.submitted = true;
-    const correct: WordResult[] = [];
-
-    // form.controls
-    let count = 0;
     Object.keys(form.controls).forEach((key) => {
       console.log('Keu is', key);
       this.checkWord(Number(key), this.reviewForm.controls[key].value);
@@ -140,9 +128,4 @@ export class TypedInputComponent implements OnInit {
   // TODO
   // startNewSession() {
   // }
-}
-
-interface WordResult {
-  wordID: number;
-  result: boolean;
 }

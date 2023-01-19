@@ -3,9 +3,9 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-stat-card',
   template: `
-    <mat-card class="word-list-el">
+    <mat-card class="stat">
       <mat-card-title>{{title}}</mat-card-title>
-      <mat-card-content ngClass="hide">
+      <mat-card-content>
         {{ stat }}
       </mat-card-content>
     </mat-card>

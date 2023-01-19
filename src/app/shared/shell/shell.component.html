@@ -1,5 +1,4 @@
 <mat-sidenav-container class="sidenav-container">
-
     <!-- SIDENAV -->
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="false">
@@ -13,12 +12,9 @@
     <mat-sidenav-content>
 
         <!-- TOP TOOLBAR-->
-
         <mat-toolbar>
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
                 *ngIf="isHandset$ | async">
-
-
                 <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
             <span class="logo" routerLink="/">✨ Ilocano Flash Cards</span>
@@ -27,26 +23,12 @@
             <div *ngIf="!(isHandset$ | async)">
                 <a mat-button routerLink="/about">💖 About</a>
                 <a mat-button routerLink="/view-words">📖 View all Words</a>
-                <!-- <a mat-button routerLink="/login">🔑 Login</a> -->
-                <!-- TODO -->
-                <!-- reviews -->
             </div>
-
-            <!-- DROPDOWN MENU -->
-
-            <!-- <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                <mat-icon>more_vert</mat-icon>
-            </button> -->
-
-
         </mat-toolbar>
 
         <!-- TRANSCLUSION -->
-        <!-- What ever in in this ele will come out here -->
         <div class="fill-space page">
             <ng-content class="container"></ng-content>
         </div>
-        
-
     </mat-sidenav-content>
 </mat-sidenav-container>
