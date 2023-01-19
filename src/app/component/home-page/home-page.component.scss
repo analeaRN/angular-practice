@@ -1,0 +1,64 @@
+@use "@angular/material" as mat;
+// @import "/assets/shared.scss";
+
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  //   justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container {
+  min-height: calc(100vh - 100px);
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+  // height: 100%;
+  // height: 1;
+  // flex: 1 1 auto;
+}
+
+#welcome {
+  // flex: 1 1 auto;
+  
+  mat-card {
+    @include mat.elevation(4, #2e2f33, 0.8);
+    padding: 75px;
+    mat-card-title {
+      font-size: xx-large;
+    }
+  }
+}
+
+.btn-review {
+  //   margin-top: 20px;
+  height: 75px;
+  font-size: large;
+  // background-color: rgb(168, 171, 215);
+  @include mat.elevation(8, #c03575, 1);
+}
+
+.btn-review:hover {
+  @include mat.elevation(12, #c03575, 1);
+}
+
+.stat-cards-correct {
+  background-color: rgb(21, 208, 74);
+  padding: 5px;
+}
+
+.stat-cards-incorrect {
+  background-color: gold;
+  padding: 5px;
+}
+
+.word-list-el-card {
+  margin: 20px
+}

@@ -22,9 +22,17 @@
   }
 }
 
+.page {
+  background-color: white;
+  margin: 0px 150px;
+  min-height: calc(100vh - 70px);
+}
 
 .fill-space {
   flex: 1 1 auto;
 }
+// .container {
+//   min-height: calc(100vh - 70px);
+// }
 
 // THIS DOESN"T WORK need to check why

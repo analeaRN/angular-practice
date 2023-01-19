@@ -13,9 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 // import { ShellComponent } from './shell/shell.component';
-
 
 // todo put in to board component?
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -23,7 +23,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 
 // ...
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const components: any = [];
 // const components = [ShellComponent];
@@ -42,6 +42,7 @@ const modules = [
   MatFormFieldModule,
   MatInputModule,
   MatSnackBarModule,
+  MatSelectModule,
   RouterModule,
 
   // drag and drop
@@ -51,16 +52,12 @@ const modules = [
 
   // added later
   MatRadioModule,
-  MatCheckboxModule
+  MatCheckboxModule,
 ];
-
 
 @NgModule({
   declarations: [...components],
   imports: [...modules],
-  exports: [
-    ...components,
-    ...modules,
-  ]
+  exports: [...components, ...modules],
 })
 export class SharedModule {}

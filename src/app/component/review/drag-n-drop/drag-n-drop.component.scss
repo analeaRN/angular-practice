@@ -1,0 +1,98 @@
+.boards {
+  //   width: 100%;
+  //   padding: 24px;
+  //   display: flex;
+  //   flex-direction: row;
+  overflow-x: scroll;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 10px;
+
+  mat-card {
+    width: auto;
+    white-space: nowrap;
+  }
+}
+
+.outer-card {
+  margin: 10px;
+  //   min-width: 300px;
+  //   max-width: 300px;
+  padding: 10px;
+  //   background: #c0bfbf;
+}
+
+.inner-card {
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.cdk-drag:not(.cdk-drag-preview) {
+  transform: none !important;
+  // transform: 0px !important;
+  // transform: translate3d(0px, 0px, 0px) !important;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.5;
+}
+
+// .cdk-drop-list-dragging .cdk-drag {
+//   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+// }
+
+// .cdk-drag-animating {
+//   transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+// }
+
+.disabled-card {
+  opacity: 0.2;
+  
+}
+
+.form-btn-review {
+  margin: 5px;
+}
+
+#form-review-actions {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.green {
+  background: #0b8686;
+  color: rgb(255, 255, 255);
+}
+
+.red {
+  background: #860b0b;
+  color: rgb(255, 255, 255);
+}
+
+.ease-color-change {
+  transition: background-color 0.2s ease;
+}
+
+.shake {
+  animation: horizontal-shaking 0.25s 1 ease-in-out;
+  // animation-iteration-count: 1;
+}
+
+@keyframes horizontal-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

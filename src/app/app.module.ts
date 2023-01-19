@@ -21,6 +21,14 @@ import { WordComponent } from './component/word/word/word.component';
 
 // set up back end
 import { HttpClientModule } from '@angular/common/http';
+import { StatCardComponent } from './component/stat-card/stat-card.component';
+import { DragNDropComponent } from './component/review/drag-n-drop/drag-n-drop.component';
+import { TypedInputComponent } from './component/review/typed-input/typed-input.component';
+import { ReviewComponent } from './component/review/review.component';
+import { ReviewFormComponent } from './component/review/review-form/review-form.component';
+import { ResultsComponent } from './component/review/results/results.component';
+// import { ReviewComponent } from './component/review/review/review.component';
+
 
 // TODO i NEED to clean this up
 
@@ -36,7 +44,13 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     WordListComponent,
     WordListElComponent,
-    WordComponent
+    WordComponent,
+    StatCardComponent,
+    DragNDropComponent,
+    TypedInputComponent,
+    ReviewComponent,
+    ReviewFormComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

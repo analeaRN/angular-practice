@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Stat } from '../interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -6,13 +7,21 @@ import { Injectable } from '@angular/core';
 export class SessionStatsService {
   totalCorrect: number;
   totalIncorrect: number;
+  numberSessions: number;
 
   wordStat: Map<number, Stat>;
 
   constructor() {
     this.totalCorrect = 0;
     this.totalIncorrect = 0;
+    this.numberSessions = 0; // correlate it to session id...
+
     this.wordStat = new Map();
+  }
+
+  newSession() {
+    this.numberSessions++;
+    return this.numberSessions;
   }
 
   addTotalCorrect(amount: number = 1): void {
@@ -64,9 +73,4 @@ export class SessionStatsService {
       incorrect: incorrect,
     };
   }
-}
-
-interface Stat {
-  correct: number;
-  incorrect: number;
 }

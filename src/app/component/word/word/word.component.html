@@ -3,12 +3,27 @@
         {{word.ilocano}}
         {{word.english}}
     </div>
-    word examples  <a [href]="exampleURLS" target="_blank">here</a>
+    word examples <a [href]="exampleURLS" target="_blank">here</a>
     {{exampleURLS}}
 
-    <p>add times reviewed</p>
-    <p>add times gotten correct</p>
-    <p>times gotten wrong</p>
+    <!-- Make into flex/ this could be put into another comp... -->
+    <div id="ind-word-stat">
+        <app-stat-card 
+            title="✔️ Correct:" 
+            [stat]="sessionStatsService.getWordStat(word!.id).correct">
+        </app-stat-card>
+
+        <app-stat-card 
+            title="❌ Incorrect:" 
+            [stat]="sessionStatsService.getWordStat(word!.id).incorrect">
+        </app-stat-card>
+
+        <app-stat-card 
+            title="💭 Ratio:" 
+            [stat]="sessionStatsService.getWordCIRatio(word!.id)">
+        </app-stat-card>
+    </div>
+
 </div>
 
 <div *ngIf="!word">

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Word } from '../interfaces';
 import { WORDS } from '../mock_data';
@@ -17,13 +17,24 @@ export class WordService {
 
   // getting from static mock data
   getWords(): Observable<Word[]> {
-    const words = of(WORDS)
+    const words = of(WORDS);
     return words;
   }
 
   getWord(id: number): Observable<Word | undefined> {
-    const words = of(WORDS.find(w => w.id == id))
+    const words = of(WORDS.find((w) => w.id == id));
     return words;
+  }
+
+  getXWords(amount: number, shuffle: boolean = true) {
+    // get words from db
+    const words = [...WORDS];
+
+    if (shuffle) {
+      WordService.shuffleArray(words);
+    }
+
+    return of(words.slice(0, amount));
   }
 
   // below is getting from backend api
@@ -47,7 +58,7 @@ export class WordService {
   //     );
   // }
 
-  // /* GET heroes whose name contains search term */
+  // /* GET word whose name contains search term */
   // searchWords(term: string): Observable<Word[]> {
   //   if (!term.trim()) { // empty search
   //     return of([]);
@@ -69,4 +80,11 @@ export class WordService {
   //     return of(result as T);
   //   };
   // }
+
+  static shuffleArray(array: any[]) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 }

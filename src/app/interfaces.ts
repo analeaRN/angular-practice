@@ -24,4 +24,17 @@ interface UserWordStat {
     incorrect: number
 }
 
-export { Word, Level, User, UserWordStat };
+// used in reviews... , maybe move to review folder
+interface WordResultWrapper {
+  word: Word;
+  incorrectCount: number;
+  result: boolean | undefined;
+}
+
+interface Stat {
+  correct: number;
+  incorrect: number;
+}
+
+
+export { Word, Level, User, UserWordStat, WordResultWrapper, Stat };

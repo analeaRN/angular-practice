@@ -3,6 +3,7 @@ import { Word } from 'src/app/interfaces';
 import { WordService } from 'src/app/service/word.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { SessionStatsService } from 'src/app/service/session-stats.service';
 
 @Component({
   selector: 'app-word',
@@ -16,7 +17,8 @@ export class WordComponent implements OnInit {
   constructor(
     private wordService: WordService,
     private location: Location,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public sessionStatsService: SessionStatsService
   ) {
   }
 

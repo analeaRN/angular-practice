@@ -4,8 +4,11 @@ import { HomePageComponent } from './component/home-page/home-page.component';
 import { AboutComponent } from './component/about/about.component';
 import { WordListComponent } from './component/word/word-list/word-list.component';
 import { WordComponent } from './component/word/word/word.component';
+import { ReviewComponent } from './component/review/review.component';
 
 const routes: Routes = [
+  { path: 'review', component: ReviewComponent}, // move review to a module?
+
   { path: 'word/:id', component: WordComponent},
   { path: 'view-words', component: WordListComponent},
   { path: 'about', component: AboutComponent},

@@ -1,0 +1,47 @@
+<!-- I want it to be besides each other -->
+<div class="">
+    <mat-card class="outer-card boards" >
+        
+        <div class="tasks" cdkDragDisabled>
+            <div class="inner-card" *ngFor="let word of wordsToReview; let i = index">
+                <mat-card [ngClass]="finalSubmit? 'disabled-card': ''"> {{ word.english }} </mat-card>
+            </div>
+        </div>
+
+
+        <div class="tasks" cdkDropList cdkDropListOrientation="vertical" (cdkDropListDropped)="taskDrop($event)">
+            <div class="inner-card" cdkDrag *ngFor="let wordTranslation of wordsToTranslate; let i = index" [cdkDragDisabled]="wordTranslation.result">
+                <mat-card [ngClass]="getClassGivenResults(i)"> {{ wordTranslation.word.ilocano }} </mat-card>
+            </div>
+        </div>
+    </mat-card>
+
+    <section id="form-review-actions">
+        <button mat-stroked-button type="button" color="accent" [disabled]="finalSubmit" (click)="checkAnswers()" class="form-btn-review">Check Answers</button>
+        <button mat-raised-button type="button" color="accent" [disabled]="finalSubmit" (click)="endSession()" class="form-btn-review">Submit and Finish
+            Session
+        </button>
+    </section>
+
+
+
+
+
+    <!-- Submit button -->
+
+
+
+
+    <!-- <div class="board-button">
+        <button mat-raised-button color="accent" cdkDragDisabled (click)="checkAnswers()">
+            Submit
+
+        </button>
+        {{results}}
+    </div> -->
+
+
+
+
+
+</div>
