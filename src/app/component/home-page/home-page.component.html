@@ -1,0 +1,59 @@
+<div class="home-page">
+    <div id="welcome" class="container box"
+        *ngIf="sessionStatsService.totalCorrect + sessionStatsService.totalIncorrect == 0; else showStats">
+        <mat-card class="box flex-col review-card-hp">
+            <mat-card-title>
+                No review data was found!
+            </mat-card-title>
+            <mat-card-subtitle>
+                Stateless Application made to practice Angular <br /> Data resets each reload :).
+            </mat-card-subtitle>
+            <button class="btn-review" mat-raised-button color="white" routerLink="/review">Start Reviewing!
+                <mat-icon>arrow_forward</mat-icon></button>
+        </mat-card>
+    </div>
+
+    <ng-template #showStats>
+        <h2> 👋 Welcome back! 👋</h2>
+        <div class="box flex-row">
+            <div>
+                <mat-card class="box flex-col review-card-hp">
+                    <mat-card-title>
+                        Have another go?
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        You got this!
+                    </mat-card-subtitle>
+                    <button class="btn-review" mat-raised-button routerLink="/review">Review Again!
+                        <mat-icon>arrow_forward</mat-icon> </button>
+                    <!-- <button class="btn-review" mat-raised-button color="accent" routerLink="/review">Review Again!
+                        <mat-icon>arrow_forward</mat-icon> </button> -->
+                </mat-card>
+            </div>
+            <div>
+                <mat-card class="stat-cards">
+                    <mat-card-title>
+                        ✔️ Total correctly reviewed ✔️
+                    </mat-card-title>
+                    <mat-card-content>{{sessionStatsService.totalCorrect}}</mat-card-content>
+                </mat-card>
+
+                <mat-card class="stat-cards">
+                    <mat-card-title>
+                        ❌ Total incorrectly guessed ❌
+                    </mat-card-title>
+                    <mat-card-content>{{sessionStatsService.totalIncorrect}}</mat-card-content>
+                </mat-card>
+            </div>
+
+        </div>
+        <div class="word-list-el-card">
+            <h2>🖊️ Words reviewed this session 🖊️</h2>
+
+            <!-- Word stat list -->
+            <span *ngFor="let word of getWordsReviewed() ">
+                <app-word-list-el [word]="word" style="margin: 10px;" routerLink="/word/{{word.id}}"></app-word-list-el>
+            </span>
+        </div>
+    </ng-template>
+</div>

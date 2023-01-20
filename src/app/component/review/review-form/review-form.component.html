@@ -1,0 +1,27 @@
+<div class="">
+    <form id="form-review" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <h3>Review Configuration</h3>
+        <mat-form-field hintLabel="only {{max}} available" class="form-review-el">
+            <mat-label>Number of cards to review:</mat-label>
+            <input matInput formControlName="numReview" type="number" min="2" [max]="max">
+            <mat-error
+                *ngIf="myForm.get('numReview')?.invalid && (myForm.get('numReview')?.dirty || myForm.get('numReview')?.touched)">
+                Please enter a number between 2 and {{max}}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-review-el">
+            <mat-label>Method of review:</mat-label>
+            <mat-select formControlName="reviewType">
+                <mat-option value="dragDrop">Drag and Drop</mat-option>
+                <mat-option value="typeTranslate">Type Translation</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- <mat-form-field>
+            <mat-label>Do you want to choose which cards to review?</mat-label>
+            <input matInput formControlName="userChoose" placeholder="">
+        </mat-form-field> -->
+        <button mat-stroked-button color="accent" type="submit" [disabled]="submitted">Send</button>
+    </form>
+</div>

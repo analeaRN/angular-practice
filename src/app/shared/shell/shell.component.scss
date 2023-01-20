@@ -1,0 +1,43 @@
+.container {
+  max-width: 724px;
+  margin: 0 20px;
+  width: calc(100% - 40px);
+}
+
+.logo {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    max-width: 940px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+  }
+}
+
+.page {
+  background-color: white;
+  margin: 0px 150px;
+  min-height: calc(100vh - 70px);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+// .container {
+//   min-height: calc(100vh - 70px);
+// }
+
+// THIS DOESN"T WORK need to check why

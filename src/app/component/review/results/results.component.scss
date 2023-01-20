@@ -1,0 +1,19 @@
+@use "@angular/material" as mat;
+
+.container {
+    padding: 40px;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-words {
+    margin: 25px 0px;
+}
+
+.card-result {
+    @include mat.elevation(6, #2e2f33, 0.8);
+}

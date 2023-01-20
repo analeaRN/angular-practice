@@ -1,0 +1,25 @@
+<div id="word-list-page">
+    <section id="">
+        <h1>📖 Registered Ilocano Vocabulary Words 📖</h1>
+        <p>Click the word to find more about it.</p>
+    </section>
+
+    <div id="word-list">
+        <!-- TODO add a search bar here -->
+
+        <!-- User picks if they want to see translations -->
+        <section id="show-translation-section">
+            <mat-checkbox class="example-margin" [(ngModel)]="showTranslations" labelPosition='before'>
+                Show English Translations
+            </mat-checkbox>
+        </section>
+
+        <!-- The individual words in db (rn mock)-->
+        <span *ngFor="let word of words" class="word-list-el-card">
+            <a routerLink="/word/{{word.id}}">
+                <app-word-list-el [word]="word" style="margin: 10px;"
+                    [showTranslation]="showTranslations"></app-word-list-el>
+            </a>
+        </span>
+    </div>
+</div>

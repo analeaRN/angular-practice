@@ -1,0 +1,12 @@
+#form-review {
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.form-review-el{
+  padding: 20px 0px;
+}

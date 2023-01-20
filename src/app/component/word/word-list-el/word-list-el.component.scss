@@ -1,0 +1,29 @@
+@use "@angular/material" as mat;
+
+.word-list-el {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.transition-opacity {
+  transition: opacity 0.3s;
+}
+
+.word-list-el:hover mat-card-subtitle {
+  opacity: 1;
+  @extend .transition-opacity;
+}
+
+.hide {
+  opacity: 0;
+  @extend .transition-opacity;
+}
+
+.show {
+  opacity: 1;
+  @extend .transition-opacity;
+}
+
+.word-list-el:hover {
+  @include mat.elevation(4, #2e2f33, 0.8);
+}

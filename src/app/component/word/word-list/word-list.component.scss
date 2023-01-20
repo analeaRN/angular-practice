@@ -1,0 +1,17 @@
+// @use '@angular/material' as mat;
+
+#word-list-page {
+  padding: 20px;
+}
+
+.word-list-el-card a {
+  text-decoration: none;
+}
+
+#word-list {
+  min-width: 150px;
+}
+
+#show-translation-section {
+  text-align: right;
+}

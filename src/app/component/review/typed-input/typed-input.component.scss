@@ -1,0 +1,18 @@
+.review-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.active-review {
+  padding: 40px;
+}
+
+#form-review-actions {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.form-btn-review {
+  margin: 5px;
+}

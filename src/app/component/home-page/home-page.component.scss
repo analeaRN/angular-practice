@@ -1,0 +1,76 @@
+@use "@angular/material" as mat;
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container {
+  min-height: calc(100vh - 100px);
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+#welcome {
+  mat-card {
+    @include mat.elevation(4, #2e2f33, 0.8);
+    padding: 75px;
+    mat-card-title {
+      font-size: xx-large;
+    }
+    mat-card-subtitle {
+      margin: 10px;
+    }
+  }
+}
+
+.btn-review {
+  height: 75px;
+  font-size: large;
+  margin-top: 12px;
+}
+
+.btn-review:hover {
+  @include mat.elevation(12, rgb(217, 188, 202), 1);
+}
+
+.word-list-el-card {
+  margin: 20px;
+}
+
+.home-page {
+  padding: 5px;
+}
+
+.review-card-hp {
+  // use Scss vars
+  //#ff4081
+  background: rgb(255, 91, 147);
+  background: linear-gradient(
+    130deg,
+    rgba(255, 91, 147, 1) 0%,
+    rgba(255, 64, 129, 1) 75%,
+    rgba(231, 25, 95, 1) 95%
+  );
+  color: white;
+
+  mat-card-subtitle {
+    color: rgb(239, 230, 230);
+  }
+}
+
+.stat-cards {
+  margin: 2px;
+  mat-card-content {
+    text-align: center;
+    margin-top: 5px;
+  }
+}
