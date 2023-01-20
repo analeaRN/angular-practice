@@ -34,7 +34,7 @@ export class ReviewFormComponent implements OnInit {
 
   onSubmit(form: FormGroup) {
     if (!form.valid) {
-      console.log(form.valid);
+      // console.log(form.valid);
       return;
     }
     this.myFormSubmitted.emit(this.myForm);
