@@ -2,14 +2,14 @@
     <mat-card class="outer-card boards">
         <div class="tasks" cdkDragDisabled>
             <div class="inner-card" *ngFor="let word of wordsToReview; let i = index">
-                <mat-card [ngClass]="finalSubmit? 'disabled-card': ''"> {{ word.english }} </mat-card>
+                <mat-card [ngClass]="finalSubmit? 'disabled-card': ''"> {{ word.english.toString() | titlecase }} </mat-card>
             </div>
         </div>
 
         <div class="tasks" cdkDropList cdkDropListOrientation="vertical" (cdkDropListDropped)="taskDrop($event)">
             <div class="inner-card" cdkDrag *ngFor="let wordTranslation of wordsToTranslate; let i = index"
                 [cdkDragDisabled]="wordTranslation.result">
-                <mat-card [ngClass]="getClassGivenResults(i)"> {{ wordTranslation.word.ilocano }} </mat-card>
+                <mat-card [ngClass]="getClassGivenResults(i)"> {{ wordTranslation.word.ilocano.toString() | titlecase }} </mat-card>
             </div>
         </div>
     </mat-card>
