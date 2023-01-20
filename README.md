@@ -18,3 +18,8 @@ You can visit this app by viewing it's deployment [here](https://analearn.github
 ## Authors
 
 @analeaRN
+
+## License
+
+MIT License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
