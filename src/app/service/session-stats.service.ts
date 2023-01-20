@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Stat } from '../interfaces';
 
+/**
+ * Handles the sharing of information about
+ * a users stats through app.
+ */
 @Injectable({
   providedIn: 'root',
 })

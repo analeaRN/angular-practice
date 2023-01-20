@@ -74,15 +74,12 @@ export class TypedInputComponent implements OnInit {
   onSubmit(form: FormGroup) {
     this.submitted = true;
     Object.keys(form.controls).forEach((key) => {
-      console.log('Keu is', key);
       this.checkWord(Number(key), this.reviewForm.controls[key].value);
     });
     this.reviewForm.disable();
   }
 
   retryWord(wordID: number) {
-    console.log(wordID, 'TRY AGAIN');
-
     // find word
     const wordInfo = this.wordsToReview.find((word) => word.word.id == wordID);
 

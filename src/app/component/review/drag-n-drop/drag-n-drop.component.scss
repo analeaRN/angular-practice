@@ -1,10 +1,5 @@
 .boards {
-  //   width: 100%;
-  //   padding: 24px;
-  //   display: flex;
-  //   flex-direction: row;
   overflow-x: scroll;
-
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 10px;
@@ -17,10 +12,7 @@
 
 .outer-card {
   margin: 10px;
-  //   min-width: 300px;
-  //   max-width: 300px;
   padding: 10px;
-  //   background: #c0bfbf;
 }
 
 .inner-card {
@@ -30,8 +22,6 @@
 
 .cdk-drag:not(.cdk-drag-preview) {
   transform: none !important;
-  // transform: 0px !important;
-  // transform: translate3d(0px, 0px, 0px) !important;
 }
 
 .cdk-drag-placeholder {
@@ -48,7 +38,6 @@
 
 .disabled-card {
   opacity: 0.2;
-  
 }
 
 .form-btn-review {

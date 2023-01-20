@@ -1,6 +1,6 @@
 interface Word {
   id: number;
-  ilocano: string | string[]; // should this just be a string array?
+  ilocano: string | string[];
   english: string | string[];
   // level?: Level,
   // userReminder: string // to add for user to add their own reminder
@@ -24,7 +24,7 @@ interface UserWordStat {
     incorrect: number
 }
 
-// used in reviews... , maybe move to review folder
+// used in reviews.r
 interface WordResultWrapper {
   word: Word;
   incorrectCount: number;

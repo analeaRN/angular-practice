@@ -6,7 +6,7 @@
 }
 
 .transition-opacity {
-    transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .word-list-el:hover mat-card-subtitle {
@@ -17,7 +17,6 @@
 .hide {
   opacity: 0;
   @extend .transition-opacity;
-
 }
 
 .show {

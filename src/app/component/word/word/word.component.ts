@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Word } from 'src/app/interfaces';
-import { WordService } from 'src/app/service/word.service';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+
 import { SessionStatsService } from 'src/app/service/session-stats.service';
+import { WordService } from 'src/app/service/word.service';
+
+import { Word } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-word',
@@ -16,11 +17,9 @@ export class WordComponent implements OnInit {
 
   constructor(
     private wordService: WordService,
-    private location: Location,
     private route: ActivatedRoute,
     public sessionStatsService: SessionStatsService
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.getWord();
@@ -29,8 +28,8 @@ export class WordComponent implements OnInit {
   getWord() {
     const wordID = Number(this.route.snapshot.paramMap.get('id'));
     this.wordService.getWord(wordID).subscribe((w) => {
-      this.word = w
-      this.exampleURLS = `https://glosbe.com/ilo/en/${this.word?.ilocano}#examples`
+      this.word = w;
+      this.exampleURLS = `https://glosbe.com/ilo/en/${this.word?.ilocano}#examples`;
     });
   }
 }

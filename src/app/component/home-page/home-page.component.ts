@@ -19,23 +19,19 @@ export class HomePageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.wordService.getWords().subscribe(w => this.words = w);
+    this.wordService.getWords().subscribe((w) => (this.words = w));
     this.wordsReviewed = this.sessionStatsService.wordStat;
   }
 
   getWordsReviewed() {
-    const result: Word[] = []
-    // for (const key of this.wordsReviewed.keys()) {
-      
-    // }
-    this.words.map(w => {
+    const result: Word[] = [];
+
+    this.words.map((w) => {
       if (this.wordsReviewed.has(w.id)) {
-        result.push(w)
+        result.push(w);
       }
     });
-    
+
     return result;
   }
-
-
 }

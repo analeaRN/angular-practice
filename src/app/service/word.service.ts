@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { Observable, of } from 'rxjs';
+// import { catchError, map } from 'rxjs/operators';
+
 import { Word } from '../interfaces';
 import { WORDS } from '../mock_data';
 
-import { Observable, of } from 'rxjs';
-// import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,6 @@ export class WordService {
 
   constructor(private http: HttpClient) {}
 
-  // getting from static mock data
   getWords(): Observable<Word[]> {
     const words = of(WORDS);
     return words;

@@ -1,10 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-stat-card',
   template: `
     <mat-card class="stat">
-      <mat-card-title>{{title}}</mat-card-title>
+      <mat-card-title>{{ title }}</mat-card-title>
       <mat-card-content>
         {{ stat }}
       </mat-card-content>
@@ -12,11 +12,9 @@ import { Component, OnInit, Input } from '@angular/core';
   `,
   styleUrls: ['./stat-card.component.scss'],
 })
-export class StatCardComponent implements OnInit {
+export class StatCardComponent {
   @Input() title!: string;
   @Input() stat!: number;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

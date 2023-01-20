@@ -1,15 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import { WordService } from 'src/app/service/word.service';
 import { Word, WordResultWrapper } from 'src/app/interfaces';
 
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  CdkDragSortEvent,
-  CdkDragEnter,
-  CdkDragMove,
-  CdkDragStart,
-} from '@angular/cdk/drag-drop';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-drag-n-drop',
@@ -48,9 +42,9 @@ export class DragNDropComponent implements OnInit {
   }
 
   taskDrop(event: CdkDragDrop<string[]>) {
-    console.log('help ME');
-    // cannot use since
     // moveItemInArray(this.toTranslate, event.previousIndex, event.currentIndex);
+    // cannot use since it shifts items in the array around (mixes up users answer.)
+
     const oldValue = this.wordsToTranslate[event.currentIndex];
     this.wordsToTranslate[event.currentIndex] =
       this.wordsToTranslate[event.previousIndex];
@@ -58,7 +52,7 @@ export class DragNDropComponent implements OnInit {
   }
 
   getClassGivenResults(index: number) {
-    let addOn = this.finalSubmit? "disabled-card": ""
+    let addOn = this.finalSubmit ? 'disabled-card' : '';
 
     // // return "red shake";
     const t = this.wordsToTranslate[index];
@@ -69,14 +63,12 @@ export class DragNDropComponent implements OnInit {
       return 'green ease-color-change ' + addOn;
     }
 
-    // return "red shake";
     return 'red ease-color-change ' + addOn;
   }
 
   checkAnswers() {
     // update results
     this.wordsToTranslate.map((word, index) => {
-      
       word.result = word.word.id === this.wordsToReview[index].id;
       if (!word.result) {
         word.incorrectCount++;
@@ -89,8 +81,8 @@ export class DragNDropComponent implements OnInit {
 
     // disable everything
     this.finalSubmit = true;
-    this.sessionResults.emit(this.wordsToTranslate);
 
-    // need to show results
+    // tell parent to show result component
+    this.sessionResults.emit(this.wordsToTranslate);
   }
 }

@@ -3,15 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ToDeleteTestingComponent } from './to-delete-testing/to-delete-testing.component';
-import { WordInputComponent } from './component/word-input/word-input.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';  // should this be imported here?
-import { BoardComponent } from './component/board/board.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // should this be imported here?
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from './shared/shared/shared.module';
-import { MultipleChoiceComponent } from './component/multiple-choice/multiple-choice.component';
 import { ShellComponent } from './shared/shell/shell.component';
 import { HomePageComponent } from './component/home-page/home-page.component';
 import { AboutComponent } from './component/about/about.component';
@@ -29,16 +25,11 @@ import { ReviewFormComponent } from './component/review/review-form/review-form.
 import { ResultsComponent } from './component/review/results/results.component';
 // import { ReviewComponent } from './component/review/review/review.component';
 
-
 // TODO i NEED to clean this up
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToDeleteTestingComponent, // clean this up later...
-    WordInputComponent,
-    BoardComponent,
-    MultipleChoiceComponent,
     ShellComponent,
     HomePageComponent,
     AboutComponent,
@@ -50,7 +41,7 @@ import { ResultsComponent } from './component/review/results/results.component';
     TypedInputComponent,
     ReviewComponent,
     ReviewFormComponent,
-    ResultsComponent
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +56,6 @@ import { ResultsComponent } from './component/review/results/results.component';
     // sets up mock api
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

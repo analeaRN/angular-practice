@@ -8,7 +8,7 @@
         <p >Find example sentences <a [href]="exampleURLS" target="_blank">here</a>!<mat-icon>open_in_new</mat-icon></p>
     
 
-    <!-- Make into flex/ this could be put into another comp... -->
+    <!-- Might want to extract this... -->
     <h4>Session stats for this word: </h4>
     <div id="ind-word-stat">
         <app-stat-card title="✔️ Correct:" [stat]="sessionStatsService.getWordStat(word!.id).correct">

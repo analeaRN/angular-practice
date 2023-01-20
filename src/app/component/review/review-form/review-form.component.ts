@@ -11,6 +11,7 @@ export class ReviewFormComponent implements OnInit {
   submitted: boolean = false;
   @Input() max: number = 2;
   @Input() min: number = 2;
+
   // there should be a better way at defining this and sharing it
   @Input() defaultChoice: 'dragDrop' | 'typeTranslate' = 'dragDrop';
 
@@ -23,7 +24,10 @@ export class ReviewFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      numReview: [this.min, [Validators.max(this.max), Validators.min(this.min)]],
+      numReview: [
+        this.min,
+        [Validators.max(this.max), Validators.min(this.min)],
+      ],
       reviewType: [this.defaultChoice, [Validators.required]],
     });
   }

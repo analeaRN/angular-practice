@@ -110,11 +110,11 @@ export class ReviewComponent implements OnInit {
   initWords(amtToReview: number = 1) {
     // I should mix array up
     this.setReviewWords = this.words.slice(0, amtToReview);
-    console.log(this.setReviewWords);
+    // console.log(this.setReviewWords);
   }
 
   handleSubmit(submittedForm: FormGroup) {
-    console.log(submittedForm);
+    // console.log(submittedForm);
     this.reviewDetails = submittedForm;
     this.currentSession = this.sessionStatsService.newSession();
   }
